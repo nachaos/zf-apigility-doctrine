@@ -21,7 +21,6 @@ use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Stdlib\Hydrator\HydratorAwareInterface;
-use Zend\Stdlib\Hydrator\HydratorInterface;
 use Zend\EventManager\SharedEventManager;
 use Traversable;
 use ReflectionClass;
@@ -302,11 +301,11 @@ class DoctrineResource extends AbstractResourceListener implements
     protected $hydrator;
 
     /**
-     * @param HydratorInterface $hydrator
+     * @param \Zend\Hydrator\HydratorInterface $hydrator
      *
      * @return $this
      */
-    public function setHydrator(HydratorInterface $hydrator)
+    public function setHydrator(\Zend\Hydrator\HydratorInterface $hydrator)
     {
         $this->hydrator = $hydrator;
 
@@ -790,3 +789,4 @@ class DoctrineResource extends AbstractResourceListener implements
         return $entity;
     }
 }
+
